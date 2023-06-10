@@ -2,7 +2,7 @@
 // import MyContext from '@context/MyContext';
 // import getUserId from '@utils/getUserId';
 import {useState } from 'react';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const StartCampaign = () => {
   const [title, setTitle] = useState('');
@@ -38,9 +38,11 @@ const StartCampaign = () => {
     if (response.ok) {
       // Handle successful campaign creation
       // Redirect or show success message
+      toast.success('New Campaign added')
     } else {
       // Handle campaign creation error
       // Display error message to the user
+      toast.error('Please fill all the input fields before submitting')
     }
   };
 

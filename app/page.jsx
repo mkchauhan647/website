@@ -3,6 +3,7 @@ import Home from '@componets/home/Home';
 import { getdatas } from '@componets/loading/delay';
 import { ToastContainer } from 'react-toastify';
 
+import styles from '@styles/page.module.css'
 const HomeRoute = async () => {
   // console.log("Homello")
   const data = await getdatas();
@@ -10,7 +11,17 @@ const HomeRoute = async () => {
   return (
     <>
       <Home />
-     
+      <address className={styles.address}>
+        <div>
+        <h3>Team Members:</h3>
+        </div>
+        <div>
+        <h4>Aashish Bhatt</h4>
+        <h4>Manoj Kumar Chauhan</h4>
+        <h4>Willson Ghimire</h4>
+        <h4>Bikram Bashyal</h4>
+        </div>
+      </address>
     </>
   );
 };

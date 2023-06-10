@@ -1,6 +1,7 @@
-import MyContext from '@context/MyContext';
+// 'use client'
+// import MyContext from '@context/MyContext';
 // import getUserId from '@utils/getUserId';
-import React, { useContext, useState } from 'react';
+import {useState } from 'react';
 
 const StartCampaign = () => {
   const [title, setTitle] = useState('');
@@ -8,7 +9,8 @@ const StartCampaign = () => {
   const [category, setCategory] = useState('');
   const [goalAmount, setGoalAmount] = useState(0);
   const [endDate, setEndDate] = useState('');
-  const { email } = useContext(MyContext);
+  const [email, setEmail]  = useState('');
+//   const { email } = useContext(MyContext);
 
   // const userId = getUserId(email);
 
@@ -16,16 +18,17 @@ const StartCampaign = () => {
     e.preventDefault();
 
     // Send start campaign request to backend API
-    const response = await fetch('/api/start-campaign', {
+    const response = await fetch('/api/startcampaign', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        email,
         title,
         description,
         category,
         goalAmount,
         endDate,
-        startDate: new Date().now(),
+        startDate: new Date(),
         // userId: userId,
       }),
     });
@@ -44,6 +47,18 @@ const StartCampaign = () => {
     <div className='container'>
       <h2>Start Campaign</h2>
       <form onSubmit={handleSubmit}>
+        <div className='mb-3'>
+          <label htmlFor='email' className='form-label'>
+            Email
+          </label>
+          <input
+            type='text'
+            className='form-control'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
         <div className='mb-3'>
           <label htmlFor='title' className='form-label'>
             Title

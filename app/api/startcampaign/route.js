@@ -1,7 +1,4 @@
-import getUserId from '@utils/getUserId';
 import mysql from 'mysql2';
-import { NextApiRequest, NextApiResponse } from 'next';
-
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -9,16 +6,22 @@ const connection = mysql.createConnection({
   database: 'fundraiser',
 });
 
+// const userid = getUserId(email);
+
+// console.logj(userid)
+
+
 export async function POST(req, res) {
   try {
-    const { title, description, category, goalamount, startdate, enddate } =
-      req.body;
-    let userid = 2;
-    const query = `INSERT INTO fundraisers (userid, title, description, category, goalamount, startdate, enddate) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    const { email, title, description, category, goalamount, startdate, enddate } = await req.json();
+    // let userid = 2;
+    const query = `INSERT INTO fundraisers (email, title, description, category, goalamount, startdate, enddate) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    console.log(query)
+    console.log(req.body)
     const [result] = await connection
       .promise()
       .query(query, [
-        userid,
+        email,
         title,
         description,
         category,

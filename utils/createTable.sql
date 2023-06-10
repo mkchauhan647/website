@@ -1,4 +1,3 @@
--- Active: 1686381981853@@127.0.0.1@3306
 create database if not exists fundraiser;   -- creating a database fundraiser for our website if 
 
 use fundraiser; -- using the created database. 
@@ -13,14 +12,13 @@ lastname varchar(255)
 
 
 create table if not exists users (
-userid int primary key auto_increment,
-email varchar(50),
+email varchar(255) primary key,
 passwords varchar(20));
 
 create table if not exists fundraisers(
 	fundid int primary key auto_increment,
-    userid int ,
-    foreign key (userid) references users(userid),
+    email varchar(255) ,
+    foreign key (email) references users(email),
 	title varchar(100),
     description varchar(255),
     category varchar(50),
@@ -36,8 +34,8 @@ create table if not exists fundraisers(
 
 create table if not exists demographics(
 	id int primary key auto_increment,
-    userid int,
-    foreign key (userid) references  users(userid),
+    email varchar(255),
+    foreign key (email) references  users(email),
     age int,
     gender varchar(10),
     location varchar(30)
@@ -45,30 +43,21 @@ create table if not exists demographics(
     
 create table if not exists  interests(
  id int primary key auto_increment,
- userid int ,
- foreign key (userid) references users(userid),
+ email varchar(255) ,
+ foreign key (email) references users(email),
  categories varchar(255)
  );
   
   create table if not exists interactions(
   id int primary key auto_increment,
-  userid int,
+  email varchar(255),
   fundid int,
-  foreign key (userid) references users(userid),
+  foreign key (email) references users(email),
   foreign key (fundid) references fundraisers(fundid),
   donationamount decimal,
   donationdatee date
   );
   
-
-  
-  
-  
-  
-  
- 
- 
- 
  
  
  

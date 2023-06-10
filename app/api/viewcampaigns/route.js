@@ -1,18 +1,9 @@
-import mysql from 'mysql2';
-import { NextApiRequest, NextApiResponse } from 'next';
+import connectToDB from '@model/connectToDB';
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'mroot',
-    database: 'fundraiser',
-  });
+const connection =connectToDB();
 
 export  async function GET(req, res) {
-//   if (req.method !== 'GET') {
-//     res.status(405).json({ error: 'Method Not Allowed' });
-//     return;
-//   }
+
 
   try {
     const query = `SELECT * FROM fundraisers`;

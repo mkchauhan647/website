@@ -3,10 +3,7 @@ import connectToDB from '@model/connectToDB';
 const connection = connectToDB();
 
 export async function POST(req, res) {
-  //   if (req.method !== 'POST') {
-  //     res.status(405).json({ error: 'Method Not Allowed' });
-  //     return;
-  //   }
+ 
 
   try {
     const { email, password } = await req.json();
@@ -31,6 +28,3 @@ export async function POST(req, res) {
   }
 }
 
-// export async function GET(){
-
-// }

@@ -1,12 +1,6 @@
-import mysql from 'mysql2';
-// import { NextApiRequest, NextApiResponse } from 'next';
+import connectToDB from '@model/connectToDB';
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'mroot',
-    database: 'fundraiser',
-  });
+const connection = connectToDB();
 
 export async function PUT(req, res) {
 

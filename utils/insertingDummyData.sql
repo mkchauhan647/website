@@ -1,72 +1,60 @@
- -- Inserting dummy data for testing .... 
- 
- 
- -- Insert into users table
-INSERT INTO users (email, passwords)
-VALUES
-('user1@example.com', 'password1'),
-('user2@example.com', 'password2'),
-('user3@example.com', 'password3'),
-('user4@example.com', 'password4'),
-('user5@example.com', 'password5'),
-('user6@example.com', 'password6'),
-('user7@example.com', 'password7'),
-('user8@example.com', 'password8'),
-('user9@example.com', 'password9'),
-('user10@example.com', 'password10');
+-- Inserting dummy data
+INSERT INTO users (email, passwords) VALUES
+('john@example.com', 'password123'),
+('jane@example.com', 'securepass'),
+('mark@example.com', 'secret123'),
+('emma@example.com', 'pass123'),
+('michael@example.com', 'password456'),
+('sarah@example.com', 'secure123'),
+('david@example.com', 'pass456'),
+('olivia@example.com', 'password789'),
+('james@example.com', 'secure456'),
+('emily@example.com', 'pass789');
 
--- Insert into fundraisers table
-INSERT INTO fundraisers (userid, title, description, category, goalamount, currentamount, startdate, enddate)
-VALUES
-(1, 'Fundraiser 1', 'Description for Fundraiser 1', 'Category 1', 500, 250, '2023-06-01', '2023-06-30'),
-(2, 'Fundraiser 2', 'Description for Fundraiser 2', 'Category 2', 1000, 750, '2023-06-01', '2023-07-15'),
-(3, 'Fundraiser 3', 'Description for Fundraiser 3', 'Category 3', 2000, 1800, '2023-06-01', '2023-07-31'),
-(4, 'Fundraiser 4', 'Description for Fundraiser 4', 'Category 1', 1500, 1200, '2023-06-01', '2023-07-31'),
-(5, 'Fundraiser 5', 'Description for Fundraiser 5', 'Category 2', 800, 400, '2023-06-01', '2023-07-15'),
-(6, 'Fundraiser 6', 'Description for Fundraiser 6', 'Category 3', 3000, 2500, '2023-06-01', '2023-08-15'),
-(7, 'Fundraiser 7', 'Description for Fundraiser 7', 'Category 1', 1200, 900, '2023-06-01', '2023-07-31'),
-(8, 'Fundraiser 8', 'Description for Fundraiser 8', 'Category 2', 600, 300, '2023-06-01', '2023-07-15'),
-(9, 'Fundraiser 9', 'Description for Fundraiser 9', 'Category 3', 4000, 3500, '2023-06-01', '2023-08-31'),
-(10, 'Fundraiser 10', 'Description for Fundraiser 10', 'Category 1', 2000, 1500, '2023-06-01', '2023-07-31');
+INSERT INTO fundraisers (email, title, description, category, goalamount, currentamount, startdate, enddate) VALUES
+('john@example.com', 'Fundraiser 1', 'Helping those in need', 'Charity', 5000, 2000, '2023-06-01', '2023-07-01'),
+('jane@example.com', 'Fundraiser 2', 'Support education', 'Education', 10000, 500, '2023-06-15', '2023-08-15'),
+('mark@example.com', 'Fundraiser 3', 'Save the environment', 'Environment', 8000, 3000, '2023-07-01', '2023-09-01'),
+('emma@example.com', 'Fundraiser 4', 'Providing clean water', 'Charity', 3000, 1500, '2023-06-10', '2023-07-10'),
+('michael@example.com', 'Fundraiser 5', 'Helping homeless shelters', 'Social Causes', 6000, 200, '2023-06-20', '2023-08-20'),
+('sarah@example.com', 'Fundraiser 6', 'Promoting arts and culture', 'Arts', 4000, 1000, '2023-07-05', '2023-09-05'),
+('david@example.com', 'Fundraiser 7', 'Supporting animal welfare', 'Environment', 7000, 2500, '2023-06-15', '2023-08-15'),
+('olivia@example.com', 'Fundraiser 8', 'Music for everyone', 'Arts', 2000, 500, '2023-06-25', '2023-07-25'),
+('james@example.com', 'Fundraiser 9', 'Promoting health awareness', 'Health', 5000, 300, '2023-07-10', '2023-09-10'),
+('emily@example.com', 'Fundraiser 10', 'Supporting social causes', 'Social Causes', 4000, 1000, '2023-07-01', '2023-08-01');
 
--- Insert into demographics table
-INSERT INTO demographics (userid, age, gender, location)
-VALUES
-(1, 25, 'Male', 'Location 1'),
-(2, 30, 'Female', 'Location 2'),
-(3, 35, 'Male', 'Location 3'),
-(4, 40, 'Female', 'Location 4'),
-(5, 45, 'Male', 'Location 5'),
-(6, 50, 'Female', 'Location 6'),
-(7, 55, 'Male', 'Location 7'),
-(8, 60, 'Female', 'Location 8'),
-(9, 65, 'Male', 'Location 9'),
-(10, 70, 'Female', 'Location 10');
+INSERT INTO demographics (email, age, gender, location) VALUES
+('john@example.com', 28, 'Male', 'New York'),
+('jane@example.com', 32, 'Female', 'London'),
+('mark@example.com', 35, 'Male', 'Sydney'),
+('emma@example.com', 29, 'Female', 'Paris'),
+('michael@example.com', 27, 'Male', 'Berlin'),
+('sarah@example.com', 30, 'Female', 'Toronto'),
+('david@example.com', 34, 'Male', 'Tokyo'),
+('olivia@example.com', 31, 'Female', 'Rome'),
+('james@example.com', 26, 'Male', 'Barcelona'),
+('emily@example.com', 33, 'Female', 'Amsterdam');
 
--- Insert into interests table
-INSERT INTO interests (userid, categories)
-VALUES
-(1, 'Category 1, Category 2'),
-(2, 'Category 2, Category 3'),
-(3, 'Category 3, Category 4'),
-(4, 'Category 4, Category 5'),
-(5, 'Category 5, Category 6'),
-(6, 'Category 6, Category 7'),
-(7, 'Category 7, Category 8'),
-(8, 'Category 8, Category 9'),
-(9, 'Category 9, Category 10'),
-(10, 'Category 10, Category 1');
+INSERT INTO interests (email, categories) VALUES
+('john@example.com', 'Charity, Social Causes'),
+('jane@example.com', 'Education, Technology'),
+('mark@example.com', 'Environment, Health'),
+('emma@example.com', 'Charity, Arts'),
+('michael@example.com', 'Social Causes, Education'),
+('sarah@example.com', 'Environment, Animal Welfare'),
+('david@example.com', 'Charity, Health'),
+('olivia@example.com', 'Arts, Music'),
+('james@example.com', 'Health, Technology'),
+('emily@example.com', 'Social Causes, LGBTQ+');
 
--- Insert into interactions table
-INSERT INTO interactions (userid, fundid, donationamount, donationdatee)
-VALUES
-(1, 1, 50.00, '2023-06-05'),
-(2, 2, 100.00, '2023-06-10'),
-(3, 3, 75.00, '2023-06-15'),
-(4, 4, 120.00, '2023-06-20'),
-(5, 5, 200.00, '2023-06-25'),
-(6, 6, 150.00, '2023-06-30'),
-(7, 7, 80.00, '2023-07-05'),
-(8, 8, 60.00, '2023-07-10'),
-(9, 9, 250.00, '2023-07-15'),
-(10, 10, 180.00, '2023-07-20');
+INSERT INTO interactions (email, fundid, donationamount, donationdatee) VALUES
+('john@example.com', 1, 100, '2023-06-05'),
+('jane@example.com', 2, 200, '2023-06-10'),
+('mark@example.com', 3, 150, '2023-06-12'),
+('emma@example.com', 4, 50, '2023-06-15'),
+('michael@example.com', 5, 300, '2023-06-20'),
+('sarah@example.com', 6, 100, '2023-06-25'),
+('david@example.com', 7, 200, '2023-06-28'),
+('olivia@example.com', 8, 75, '2023-07-02'),
+('james@example.com', 9, 250, '2023-07-05'),
+('emily@example.com', 10, 150, '2023-07-08');

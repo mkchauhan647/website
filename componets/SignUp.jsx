@@ -24,7 +24,8 @@ const SignUp = () => {
     } else {
       // Handle sign-up error
       // Display error message to the user
-      toast.error(await response.json())
+      toast.error("user already exists please login")
+      
     }
   };
 

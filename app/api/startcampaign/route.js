@@ -1,10 +1,5 @@
-import mysql from 'mysql2';
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'mroot',
-  database: 'fundraiser',
-});
+import connectToDB from '@model/connectToDB';
+const connection = connectToDB();
 
 // const userid = getUserId(email);
 

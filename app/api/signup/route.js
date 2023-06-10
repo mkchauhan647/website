@@ -1,12 +1,6 @@
-import mysql from 'mysql2';
-import { NextApiRequest, NextApiResponse } from 'next';
+import connectToDB from '@model/connectToDB';
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'mroot',
-    database: 'fundraiser',
-  });
+const connection = connectToDB()
 
 export  async function POST(req, res) {
   
@@ -14,8 +8,8 @@ export  async function POST(req, res) {
   try {
     const { email, password } = await req.json();
     const query = `INSERT INTO users (email, passwords) VALUES (?, ?)`;
-    const [result] = await connection.promise().query(query, [email, password]);
-
+    const result= await connection.promise().query(query, [email, password]);
+    console.log("Hello",result)
     // res.status(200).json({ message: 'User created successfully' });
     return new Response(JSON.stringify({ message: 'User created successfully' }),{status:200});
   } catch (error) {

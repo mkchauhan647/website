@@ -6,7 +6,6 @@ const connectToDB = () => {
   const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    // password: 'password',
     password: 'mroot',
     database: 'fundraiser',
   });
@@ -31,5 +30,5 @@ const connectToDB = () => {
 // console.log("Hello",db);
 
 // export default connectToDB
-module.exports = connectToDB;
-// export default connectToDB;
+// module.exports = connectToDB;
+export default connectToDB;

@@ -95,7 +95,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import UpdatePopup from './UpdateCampaign';
 import { useRouter } from 'next/navigation';
 
@@ -146,11 +146,27 @@ const fetchCampaigns = async () => {
 
   const handleUpdatePopupClose = () => {
     setShowUpdatePopup(false);
+    // toast.success('Campaign updated successfully')
+    toast.success('Campaign updated succesfully')
+
   fetchCampaigns()
   };
 
   return (
     <div className="container">
+      
+      <ToastContainer
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
       <h2>My Campaigns</h2>
       <table className="table">
         <thead>

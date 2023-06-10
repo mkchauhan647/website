@@ -2,6 +2,7 @@
 // import MyContext from '@context/MyContext';
 // import getUserId from '@utils/getUserId';
 import {useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 const StartCampaign = () => {
   const [title, setTitle] = useState('');
@@ -45,6 +46,18 @@ const StartCampaign = () => {
 
   return (
     <div className='container'>
+      <ToastContainer
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
       <h2>Start Campaign</h2>
       <form onSubmit={handleSubmit}>
         <div className='mb-3'>

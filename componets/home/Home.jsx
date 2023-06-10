@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Login />
-
+      <SignUp/>
       <ToastContainer
         position='bottom-center'
         autoClose={5000}

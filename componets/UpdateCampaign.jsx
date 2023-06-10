@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const UpdatePopup = ({ onClose, selectedCampaign }) => {
   const [title, setTitle] = useState(selectedCampaign.title);
@@ -34,7 +34,6 @@ const router = useRouter()
     if (response.ok) {
       // Handle successful campaign update
       // Close the update popup
-      toast.success('Campaign updated successfully')
       onClose();
     //   router.refresh()
     } else {
@@ -47,6 +46,18 @@ const router = useRouter()
  
     <div className="update-popup" style={{position:'fixed',top:0, display: 'flex', flexDirection: 'column', background: '#eee', padding: '2rem', width: '90%', justifyContent: 'center', height: '90%', margin: '3rem auto'}}>
       <h3>Update Campaign</h3>
+      <ToastContainer
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
       <form>
         <div className="form-group">
           <label>Title</label>

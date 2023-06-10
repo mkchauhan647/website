@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -17,10 +18,13 @@ const SignUp = () => {
     // Handle response from backend
     if (response.ok) {
       // Handle successful sign-up
+      toast.success("Usesr Created Succesfully")
       // Redirect or show success message
+      router.push('/dashboard/start-campaign')
     } else {
       // Handle sign-up error
       // Display error message to the user
+      toast.error(await response.json())
     }
   };
 

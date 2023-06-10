@@ -14,10 +14,16 @@ const connection = mysql.createConnection({
 export async function POST(req, res) {
   try {
     const { email, title, description, category, goalamount, startdate, enddate } = await req.json();
+    // console.log(await req.json())
     // let userid = 2;
-    const query = `INSERT INTO fundraisers (email, title, description, category, goalamount, startdate, enddate) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-    console.log(query)
-    console.log(req.body)
+  let goalamountNum = parseInt(goalamount)
+
+    console.log(goalamountNum, goalamount);
+    const query = `INSERT INTO fundraisers (email, title, description, category, goalamount, currentamount, startdate, enddate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+    // console.log(query)
+    // console.log(req.body)
+    console.log(startdate)
+    console.log(goalamount)
     const [result] = await connection
       .promise()
       .query(query, [
@@ -25,8 +31,9 @@ export async function POST(req, res) {
         title,
         description,
         category,
-        goalamount,
-        startdate,
+        goalamountNum,
+        0,
+        startdate.slice(0,10),
         enddate,
       ]);
 

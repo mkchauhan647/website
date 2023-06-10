@@ -7,8 +7,8 @@ const StartCampaign = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
-  const [goalAmount, setGoalAmount] = useState(0);
-  const [endDate, setEndDate] = useState('');
+  const [goalamount, setgoalamount] = useState(0);
+  const [enddate, setenddate] = useState('');
   const [email, setEmail]  = useState('');
 //   const { email } = useContext(MyContext);
 
@@ -16,7 +16,7 @@ const StartCampaign = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    // console.log(email)
     // Send start campaign request to backend API
     const response = await fetch('/api/startcampaign', {
       method: 'POST',
@@ -26,9 +26,9 @@ const StartCampaign = () => {
         title,
         description,
         category,
-        goalAmount,
-        endDate,
-        startDate: new Date(),
+        goalamount,
+        enddate,
+        startdate: new Date(),
         // userId: userId,
       }),
     });
@@ -95,27 +95,27 @@ const StartCampaign = () => {
           />
         </div>
         <div className='mb-3'>
-          <label htmlFor='goalAmount' className='form-label'>
+          <label htmlFor='goalamount' className='form-label'>
             Goal Amount
           </label>
           <input
             type='number'
             className='form-control'
-            id='goalAmount'
-            value={goalAmount}
-            onChange={(e) => setGoalAmount(e.target.value)}
+            id='goalamount'
+            value={goalamount}
+            onChange={(e) => setgoalamount(e.target.value)}
           />
         </div>
         <div className='mb-3'>
-          <label htmlFor='endDate' className='form-label'>
+          <label htmlFor='enddate' className='form-label'>
             End DAte
           </label>
           <input
             type='date'
             className='form-control'
-            id='endDate'
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
+            id='enddate'
+            value={enddate}
+            onChange={(e) => setenddate(e.target.value)}
           />
         </div>
         <button type='submit' className='btn btn-primary'>

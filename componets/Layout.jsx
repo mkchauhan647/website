@@ -1,16 +1,15 @@
-import Nabvar from "./navbar/Nabvar"
+import { ToastContainer } from 'react-toastify';
+import Nabvar from './navbar/Nabvar';
 
-const Layout = ({children})  => {
+const Layout = ({ children }) => {
+  return (
+    <>
+      <Nabvar />
+      {children}
 
+      {/* <Footer/> */}
+    </>
+  );
+};
 
-
-    return (
-            <>
-            <Nabvar/>
-            {children}
-            {/* <Footer/> */}
-            </>
-    )
-}
-
-export default Layout
+export default Layout;

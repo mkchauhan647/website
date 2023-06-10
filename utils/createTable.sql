@@ -1,3 +1,4 @@
+-- Active: 1686381981853@@127.0.0.1@3306
 create database if not exists fundraiser;   -- creating a database fundraiser for our website if 
 
 use fundraiser; -- using the created database. 
@@ -25,7 +26,7 @@ create table if not exists fundraisers(
     category varchar(50),
     goalamount int ,
     currentamount int,
-    startdate current_date(),
+    startdate date,
     enddate date
     );
     

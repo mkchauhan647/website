@@ -1,0 +1,17 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+
+}
+
+.sticky{
+    position: sticky;
+    top:11vh;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+}

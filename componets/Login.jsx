@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
-import MyContext from '@context/MyContext';
+// import MyContext from '@context/MyContext';
 const Login = () => {
   // const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
-  const { email, setEmail } = useContext(MyContext);
+  // const { email, setEmail } = useContext(MyContext);
+  const [email,setEmail] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();

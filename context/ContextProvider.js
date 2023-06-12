@@ -1,15 +1,15 @@
-'use client';
-import { useState } from 'react';
-import MyContext from './MyContext';
+// 'use client';
+// import { useState } from 'react';
+// import MyContext from './MyContext';
 
-const ContextProvider = ({ children }) => {
-  const [email, setEmail] = useState('');
+// const ContextProvider = ({ children }) => {
+//   const [email, setEmail] = useState('');
 
-  return (
-    <MyContext.Provider value={{ email, setEmail }}>
-      {children}
-    </MyContext.Provider>
-  );
-};
+//   return (
+//     <MyContext.Provider value={{ email, setEmail }}>
+//       {children}
+//     </MyContext.Provider>
+//   );
+// };
 
-export default ContextProvider;
+// export default ContextProvider;

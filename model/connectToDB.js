@@ -10,7 +10,7 @@ const connectToDB = () => {
         password: "Azure.c0m",
         database: "fundraiser",
         port: 3306,
-        ssl: { ca: fs.readFileSync("model/DigiCertGlobalRootCA.crt.pem") }
+        ssl: { ca: fs.readFileSync("sslca/DigiCertGlobalRootCA.crt.pem") }
     }
 
 

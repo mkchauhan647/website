@@ -1,9 +1,9 @@
-// import mysql from 'mysql2';
-const mysql = require('mysql2');
-const fs = require('fs');
-// import fs from 'fs';
-// import path from 'path';
-const path = require('path');
+import mysql from 'mysql2';
+// const mysql = require('mysql2');
+// const fs = require('fs');
+import fs from 'fs';
+import path from 'path';
+// const path = require('path');
 const filepath = path.join(__dirname, './DigiCertGlobalRootCA.crt.pem')
 console.log("hellopath:",filepath);
 const connectToDB = () => {

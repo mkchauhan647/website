@@ -2,10 +2,10 @@ import mysql from 'mysql2';
 // const mysql = require('mysql2');
 // const fs = require('fs');
 import fs from 'fs';
-import path from 'path';
+// import path from 'path';
 // const path = require('path');
-const filepath = path.join(__dirname, './DigiCertGlobalRootCA.crt.pem')
-console.log("hellopath:",filepath);
+// const filepath = path.join(__dirname, './DigiCertGlobalRootCA.crt.pem')
+// console.log("hellopath:",filepath);
 const connectToDB = () => {
 
     const data = {
@@ -14,7 +14,7 @@ const connectToDB = () => {
         password: "Azure.c0m",
         database: "fundraiser",
         port: 3306,
-        ssl: { ca: fs.readFileSync(filepath) }
+        ssl: { ca: fs.readFileSync("model/DigiCertGlobalRootCA.crt.pem") }
     }
 
 
@@ -35,5 +35,5 @@ const connectToDB = () => {
     }
 }
 
-connectToDB();
-// export default connectToDB;
+// connectToDB();
+export default connectToDB;

@@ -22,6 +22,17 @@ const HomeRoute = async () => {
         <h4>Bikram Bashyal</h4>
         </div>
       </address>
+      <address className={styles.address}>
+        <div>
+        <h3>Team Members:</h3>
+        </div>
+        <div>
+        <h4>Aashish Bhatt</h4>
+        <h4>Manoj Kumar Chauhan</h4>
+        <h4>Willson Ghimire</h4>
+        <h4>Bikram Bashyal</h4>
+        </div>
+      </address>
     </>
   );
 };

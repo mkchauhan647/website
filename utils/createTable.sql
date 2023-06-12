@@ -1,3 +1,4 @@
+-- Active: 1686544414577@@myhackmysql.mysql.database.azure.com@3306
 create database if not exists fundraiser;   -- creating a database fundraiser for our website if 
 
 use fundraiser; -- using the created database. 

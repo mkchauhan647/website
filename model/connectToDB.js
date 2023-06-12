@@ -1,34 +1,35 @@
-// import mysql from 'mysql2'
-// const mysql = require('mysql2');
 import mysql from 'mysql2';
-
+// const mysql = require('mysql2');
+// const fs = require('fs');
+import fs from 'fs';
 const connectToDB = () => {
-  const con = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'mroot',
-    database: 'fundraiser',
-  });
 
-  con.connect(function (err) {
-    if (err) throw err;
-    console.log('Connected!');
-  });
+    const data = {
+        host: "myhackmysql.mysql.database.azure.com",
+        user: "myhackmysql",
+        password: "Azure.c0m",
+        database: "fundraiser",
+        port: 3306,
+        ssl: { ca: fs.readFileSync("model/DigiCertGlobalRootCA.crt.pem") }
+    }
 
-  return con;
-};
 
-// const query = ({query,values=[]}) => {
 
-//   const db = connectToDB();
+    try{
+        const connection = mysql.createConnection(data);
+        connection.connect((err) => {
+            if (err) {
+                console.log("Error connecting to DB: " + err);
+                return;
+            }
+            console.log("Connection established");
+        });
+        return connection;
+    }
+    catch(err){
+        console.log("Error connecting to DB: " + err);
+    }
+}
 
-//     // db.
-// }
-
-// db = connectToDB();
-
-// console.log("Hello",db);
-
-// export default connectToDB
-// module.exports = connectToDB;
+// connectToDB();
 export default connectToDB;

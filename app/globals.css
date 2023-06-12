@@ -217,6 +217,11 @@ a {
 
  /* All the things above are only for testing purpose. global.css starts from here  */
 
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+
 
  :root{
   --background_color: #ffffff;

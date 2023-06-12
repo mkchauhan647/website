@@ -1,0 +1,7 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0f2b9f05-dca4-4a37-997d-6731815d3d55/resourceGroups/myhack/providers/Microsoft.Web/sites/myhack",
+    "appService.deploySubpath": "."
+} // {
+//     "appService.defaultWebAppToDeploy": "undefined/subscriptions/0f2b9f05-dca4-4a37-997d-6731815d3d55/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/myhack",
+//     "appService.deploySubpath": "."
+// }
